@@ -13,6 +13,9 @@ export const ListaEstudiantes = ({ dataStudent }) => {
           </div>
         </div>
       ))}
+      <div className='add-student'>
+        <button>+</button>
+      </div>
     </div>
   )
 }
