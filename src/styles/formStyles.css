@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formulario-estudiante{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.formulario-estudiante label{
+    font-weight: 600;
+    font-size: 19px;
+    color: #141414;
+    align-self: start;
+}
+
+.formulario-estudiante input{
+    width: 100%;
+    height: 40px;
+    border: 2px solid #141414;
+    border-radius: 7px;
+    font-size: 17px;
+}
+
+.formulario-estudiante button{
+    width: 70%;
+    height: 30px;
+    border: 2px solid #141414;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #141414;
+    color: aliceblue;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.formulario-estudiante button:hover{
+    background-color: #333333;
+}
