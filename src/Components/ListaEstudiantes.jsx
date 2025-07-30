@@ -44,6 +44,11 @@ export const ListaEstudiantes = ({ dataStudent}) => {
     setEstudianteEditando(null)
   }
 
+  const totalEstudiantes = estudiantes.length
+  const promedioGeneral = estudiantes.length > 0 
+  ? (estudiantes.reduce((suma, estudiante) => suma + parseFloat(estudiante.promedio), 0) / estudiantes.length).toFixed(2) : 0
+
+
   if (formulario) {
     return (
       <FormularioEstudiante 
@@ -70,6 +75,18 @@ export const ListaEstudiantes = ({ dataStudent}) => {
           </div>
         </div>
       ))}
+
+     <div className='stats-c'>
+        <div className='stats'>
+          <span className='stat-n'>{totalEstudiantes} </span>
+          <span className='stat-t'>Estudiantes</span>
+        </div>
+        <div className='stats'>
+          <span className='stat-n'>{promedioGeneral} </span>
+          <span className='stat-t'>Promedio</span>
+        </div>
+      </div>
+
       <div className='add-student'>
         <button onClick={() => setFormulario(true)}>+</button>
       </div>

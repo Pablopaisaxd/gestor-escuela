@@ -86,3 +86,40 @@
 .add-student button:hover{
   background-color: #043a04;
 }
+
+.stats-c {
+  position: fixed;
+  bottom: 18px;
+  right: 22px;
+  margin-bottom: 11rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stats-n {
+  font-size: 24px;
+  font-weight: bold;
+  color: #05a51a;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.stats-t {
+  font-size: 12px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
