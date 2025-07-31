@@ -20,8 +20,10 @@ export const FormularioEstudiante = ({cerrar, agregar, actualizar, estudianteEdi
     switch (true) {
       case values.nombre.length < 2:
         alert("El nombre debe tener mas de 2 caracteres")
+        return
       case values.edad < 16 || values.edad > 60:
         alert("Debes ser mayor de 16 años o menor de 60")
+        return
       case values.promedio < 0 || values.promedio > 5:
         alert("El promedio se califica de 0 a 5")
         return
