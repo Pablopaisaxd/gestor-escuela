@@ -17,7 +17,15 @@ export const FormularioEstudiante = ({cerrar, agregar, actualizar, estudianteEdi
       alert('Por favor completa todos los campos')
       return
     }
-
+    switch (true) {
+      case values.nombre.length < 2:
+        alert("El nombre debe tener mas de 2 caracteres")
+      case values.edad < 16 || values.edad > 60:
+        alert("Debes ser mayor de 16 años o menor de 60")
+      case values.promedio < 0 || values.promedio > 5:
+        alert("El promedio se califica de 0 a 5")
+        return
+    }
     if (estudianteEditando) {
       actualizar({
         id: estudianteEditando.id,
@@ -48,13 +56,13 @@ export const FormularioEstudiante = ({cerrar, agregar, actualizar, estudianteEdi
       <h2>{estudianteEditando ? 'Editar Estudiante' : 'Formulario Estudiante'}</h2>
       <form className='formulario-estudiante' onSubmit={handleSubmit}>
         <label htmlFor="nombre">Nombre:</label>
-        <input type="text" name="nombre" value={values.nombre} onChange={handleValues} required minLength="2"/>
+        <input type="text" name="nombre" value={values.nombre} onChange={handleValues}/>
         <label htmlFor="edad">Edad:</label>
-        <input type="number" name="edad" value={values.edad} onChange={handleValues} required min="16" max="60"/>
+        <input type="number" name="edad" value={values.edad} onChange={handleValues} />
         <label htmlFor="carrera">Carrera:</label>
-        <input type="text" name="carrera" value={values.carrera} onChange={handleValues} required/>
+        <input type="text" name="carrera" value={values.carrera} onChange={handleValues} />
         <label htmlFor="promedio">Promedio Académico:</label>
-        <input type="number" name="promedio" value={values.promedio} onChange={handleValues} required min="0" max="5" step="0.1"/>
+        <input type="number" name="promedio" value={values.promedio} onChange={handleValues} />
         <button type="submit">
           {estudianteEditando ? 'Actualizar' : 'Guardar'}
         </button>
